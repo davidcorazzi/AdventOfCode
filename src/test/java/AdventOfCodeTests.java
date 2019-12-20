@@ -3,7 +3,7 @@ import org.junit.Test;
 
 public class AdventOfCodeTests {
 
-    @Test
+   @Test
     public void testCase1(){
         long mass = 12;
         long expectedResult = 2;
@@ -24,7 +24,7 @@ public class AdventOfCodeTests {
     @Test
     public void testCase3() {
         long mass = 1969;
-        long expectedResult = 654;
+        long expectedResult = 966;
         long result = AdventOfCode.calculateFuel(mass);
 
         Assert.assertEquals(expectedResult, result);
@@ -33,7 +33,7 @@ public class AdventOfCodeTests {
     @Test
     public void testCase4() {
         long mass = 100756;
-        long expectedResult = 33583;
+        long expectedResult = 50346;
         long result = AdventOfCode.calculateFuel(mass);
 
         Assert.assertEquals(expectedResult, result);

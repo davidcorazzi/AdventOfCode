@@ -10,8 +10,8 @@ public class AdventOfCode {
         long totalFuel = 0;
         ArrayList<String> inputs = getInputs();
         for(String input : inputs) {
-            long mass = calculateFuel(Long.valueOf(input));
-            totalFuel = totalFuel + mass;
+            long mass = calculateFuel(Long.parseLong(input));
+            totalFuel += mass;
         }
 
         System.out.println("Total Fuel Needed = " + totalFuel);
@@ -19,7 +19,14 @@ public class AdventOfCode {
     }
 
     public static long calculateFuel(long mass) {
-        return (Math.floorDiv(mass, DIVIDE_BY)) - SUBTRACT_BY;
+        long fuelRequired = 0;
+        long tempFuelRequired = (Math.floorDiv(mass, DIVIDE_BY)) - SUBTRACT_BY;
+
+        while(tempFuelRequired > 0) {
+            fuelRequired += tempFuelRequired;
+            tempFuelRequired = (Math.floorDiv(tempFuelRequired, DIVIDE_BY)) - SUBTRACT_BY;
+        }
+        return fuelRequired;
     }
 
     private static ArrayList<String> getInputs() throws IOException {
